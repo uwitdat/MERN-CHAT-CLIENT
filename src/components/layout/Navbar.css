@@ -1,0 +1,9 @@
+nav {
+  background-color: var(--color-navy);
+  font-family: var(--font-primary);
+}
+
+nav .brand-logo {
+  font-size: 3rem;
+  font-family: var(--font-primary);
+}

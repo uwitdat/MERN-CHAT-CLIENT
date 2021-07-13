@@ -1,0 +1,78 @@
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.myCard {
+  width: 30rem;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 20px;
+  background-color: var(--color-navy);
+}
+
+span.card-title {
+  font-size: 2rem;
+  font-family: var(--font-primary);
+}
+
+#room {
+  font-family: var(--font-secondary);
+}
+
+.btn {
+  font-family: var(--font-primary);
+  background-color: var(--color-blue-light);
+  transition: all 300ms;
+  border-radius: 10px;
+}
+.btn:hover {
+  background-color: var(--color-blue-light);
+  transform: scale(1.05);
+}
+
+input#room.validate {
+  color: var(--color-mint);
+}
+
+input#room.validate:focus {
+  border-bottom: 1px solid var(--color-mint);
+  box-shadow: none;
+}
+
+a {
+  color: var(--color-mint);
+  padding: 1rem;
+  font-family: var(--font-secondary);
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rooms {
+  width: 20rem;
+}
+
+.room-one {
+  background-color: var(--color-navy);
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  font-family: var(--font-primary);
+  text-transform: capitalize;
+  color: var(--color-mint);
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.rooms-title {
+  font-size: 1.6rem;
+  font-family: var(--font-primary);
+  color: var(--color-blue-light);
+}
