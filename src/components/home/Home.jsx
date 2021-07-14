@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../../UserContext'
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import RoomList from './RoomList'
 import io from 'socket.io-client'
 import './Home.css'
@@ -48,25 +48,11 @@ export const Home = () => {
   }
 
 
-  const setAsJohn = () => {
-    const john = {
-      name: 'John',
-      email: 'john@email.com',
-      password: '123',
-      id: '123'
-    }
-    setUser(john)
+
+  if (!user) {
+    return <Redirect to='/login' />
   }
 
-  const setAsTom = () => {
-    const tom = {
-      name: 'Tom',
-      email: 'tom@email.com',
-      password: '456',
-      id: '456'
-    }
-    setUser(tom)
-  }
 
   return (
     <div>
@@ -90,8 +76,7 @@ export const Home = () => {
               </form>
             </div>
             <div className="card-action">
-              <a href="#" onClick={setAsJohn}>set as john</a>
-              <a href="#" onClick={setAsTom}>set as tom</a>
+
             </div>
           </div>
         </div>
@@ -102,9 +87,6 @@ export const Home = () => {
         </div>
 
       </div>
-      <Link to='/chat'>
-        <button>go to chat</button>
-      </Link>
     </div>
   )
 }

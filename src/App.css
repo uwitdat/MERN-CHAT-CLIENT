@@ -7,7 +7,9 @@
   --font-primary: "Righteous", cursive;
   --font-secondary: "M PLUS 1p", sans-serif;
 }
-
+.h3 {
+  font-family: var(--font-primary);
+}
 .App {
   text-align: center;
 }

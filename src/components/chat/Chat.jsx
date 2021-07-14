@@ -17,7 +17,7 @@ export const Chat = () => {
 
     useEffect(() => {
         socket = io(ENDPT)
-        socket.emit('join', { name: user.name, room_id, user_id: user.id })
+        socket.emit('join', { name: user.name, room_id, user_id: user._id })
     }, [])
 
 
@@ -43,7 +43,7 @@ export const Chat = () => {
 
     return (
         <div>
-            <Messages messages={messages} user_id={user.id} />
+            <Messages messages={messages} user_id={user._id} />
             <Input
                 message={message}
                 setMessage={setMessage}
