@@ -24,7 +24,7 @@ const Signup = () => {
     console.log(name, email, password)
     try {
       const res = await fetch(
-        'http://localhost:5000/signup', {
+        'https://mern-socket-chat-app-ben.herokuapp.com/signup', {
         method: 'POST',
         credentials: 'include',
         body: JSON.stringify({ name, email, password }),

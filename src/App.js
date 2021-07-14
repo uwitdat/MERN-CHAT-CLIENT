@@ -15,7 +15,7 @@ function App() {
     const verifyUser = async () => {
       try {
         const res = await fetch(
-          'http://localhost:5000/verifyuser', {
+          'https://mern-socket-chat-app-ben.herokuapp.com/verifyuser', {
           credentials: 'include',
           headers: { 'Content-Type': 'application/json' }
         })

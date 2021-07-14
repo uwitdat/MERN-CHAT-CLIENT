@@ -12,7 +12,7 @@ export const Home = () => {
   const [room, setRoom] = useState('')
   const [rooms, setRooms] = useState([])
 
-  const ENDPT = 'localhost:5000'
+  const ENDPT = 'https://mern-socket-chat-app-ben.herokuapp.com'
 
   useEffect(() => {
     socket = io(ENDPT)

@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const logout = async () => {
         try {
-            const res = fetch('http://localhost:5000/logout', {
+            const res = fetch('https://mern-socket-chat-app-ben.herokuapp.com/logout', {
                 credentials: 'include',
             })
             const data = (await res).json()

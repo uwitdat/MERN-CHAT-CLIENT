@@ -8,7 +8,7 @@ import io from 'socket.io-client'
 let socket;
 
 export const Chat = () => {
-    const ENDPT = 'localhost:5000'
+    const ENDPT = 'https://mern-socket-chat-app-ben.herokuapp.com'
 
     const { user, setUser } = useContext(UserContext)
     let { room_id, room_name } = useParams()

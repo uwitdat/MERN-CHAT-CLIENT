@@ -24,7 +24,7 @@ const Login = () => {
         console.log(name, email, password)
         try {
             const res = await fetch(
-                'http://localhost:5000/login', {
+                'https://mern-socket-chat-app-ben.herokuapp.com/login', {
                 method: 'POST',
                 credentials: 'include',
                 body: JSON.stringify({ name, email, password }),
