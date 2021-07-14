@@ -1,0 +1,14 @@
+.send-btn {
+  color: var(--color-navy);
+  border: none;
+  background-color: transparent;
+}
+.send {
+  font-size: 3rem;
+  transition: all 200ms;
+}
+
+.send:hover {
+  transform: scale(1.05) rotate(-10deg);
+  cursor: pointer;
+}

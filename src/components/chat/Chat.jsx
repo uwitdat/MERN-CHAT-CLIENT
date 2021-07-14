@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../UserContext'
 import { Link, useParams } from 'react-router-dom'
+import Messages from './messages/Messages'
+import Input from '../input/Input'
 import io from 'socket.io-client'
 
 let socket;
@@ -24,10 +26,15 @@ export const Chat = () => {
             setMessages([...messages, message])
         })
     })
+
+    useEffect(() => {
+        socket.on('output-message', messages => {
+            setMessages(messages)
+        })
+    })
     const sendMessage = (e) => {
         e.preventDefault();
         if (message) {
-            console.log(message)
             socket.emit('sendMessage', message, room_id, () => {
                 setMessage('')
             })
@@ -36,20 +43,12 @@ export const Chat = () => {
 
     return (
         <div>
-            <div>{room_id} {room_name}</div>
-
-            <h1>Chat {JSON.stringify(user)}</h1>
-            <pre>{JSON.stringify(messages, null, '\t')}</pre>
-
-            <form action='' onSubmit={sendMessage}>
-                <input type='text'
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' ?
-                        sendMessage(e) : null}
-                />
-                <button>Send Message</button>
-            </form>
+            <Messages messages={messages} user_id={user.id} />
+            <Input
+                message={message}
+                setMessage={setMessage}
+                sendMessage={sendMessage}
+            />
         </div>
     )
 }
